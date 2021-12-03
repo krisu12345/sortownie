@@ -39,10 +39,6 @@ namespace sortownie
 
 
 
-
-
-
-
                 using (var sr = new StreamReader(theDialog.FileName))
                 {
                     string line;
@@ -87,6 +83,32 @@ namespace sortownie
 
         }
 
-        
+
+
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+            if (Tablica.Count == 0)
+            {
+                OpenFileDialog theDialog = new OpenFileDialog();
+                theDialog.Title = "Open Text File";
+                theDialog.Filter = "TXT files|*.txt";
+                theDialog.InitialDirectory = @"C:\";
+                theDialog.ShowDialog();
+
+
+
+                using (var sr = new StreamReader(theDialog.FileName))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Tablica.Add(int.Parse(line));
+                    }
+                }
+            } }
+          
+
+        }
     }
-}
