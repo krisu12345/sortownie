@@ -47,8 +47,9 @@ namespace sortownie
                 }
                 while (n > 1);
             }
-            
-
+            //ile razy i wystwietlanie sredniej
+            decimal srednia = 0;
+            decimal wsrednia = 0;
             decimal ilerazy = numericUpDown1.Value;
             for(int i = 0; i<ilerazy;i++)
             {
@@ -56,8 +57,11 @@ namespace sortownie
                 sort(Tablica);
                 DateTime po = DateTime.Now;
                 TimeSpan czas = po - pomiar;
-               
+                srednia += czas.Milliseconds;
             }
+            wsrednia = srednia/ilerazy;
+            label1.Text = wsrednia.ToString();
+
             //DateTime dowyniku = DateTime.Now;
             //TimeSpan wynik = pomiar
             
