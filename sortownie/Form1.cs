@@ -194,11 +194,25 @@ namespace sortownie
                 }
             }
             //ile razy i czas
-            decimal ilerazy = numericUpDown2.Value;
+            decimal ilerazy = numericUpDown3.Value;
             DateTime pomiar = DateTime.Now;
-            for (int i = 0; i < ilerazy; i++)
-            {
-                Quick_Sort(Tablica, 0, Tablica.Count - 1);
+            for (int ii = 0; ii < ilerazy; ii++)
+            { 
+                int j;
+                int N = Tablica.Count;
+                int x;
+                int i;
+                for (j = N - 2; j >= 0; j--)
+                {
+                    x = Tablica[j];
+                    i = j + 1;
+                    while ((i < N) && (x > Tablica[i]))
+                    {
+                        Tablica[i - 1] = Tablica[i];
+                        i++;
+                    }
+                    Tablica[i - 1] = x;
+                }
             }
             DateTime po = DateTime.Now;
             TimeSpan czas = po - pomiar;
