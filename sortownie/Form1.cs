@@ -48,6 +48,9 @@ namespace sortownie
                 while (n > 1);
             }
             DateTime pomiar = DateTime.Now;
+
+            decimal ilerazy = numericUpDown1.Value;
+            while()
             sort(Tablica);
             DateTime po = DateTime.Now;
             TimeSpan czas = po - pomiar;
