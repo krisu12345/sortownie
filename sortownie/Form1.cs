@@ -202,16 +202,17 @@ namespace sortownie
                 int N = Tablica.Count;
                 int x;
                 int i;
+                var tablica = Tablica;
                 for (j = N - 2; j >= 0; j--)
                 {
-                    x = Tablica[j];
+                    x = tablica[j];
                     i = j + 1;
-                    while ((i < N) && (x > Tablica[i]))
+                    while ((i < N) && (x > tablica[i]))
                     {
-                        Tablica[i - 1] = Tablica[i];
+                        tablica[i - 1] = tablica[i];
                         i++;
                     }
-                    Tablica[i - 1] = x;
+                    tablica[i - 1] = x;
                 }
             }
             DateTime po = DateTime.Now;

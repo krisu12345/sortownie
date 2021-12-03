@@ -160,7 +160,7 @@ namespace sortownie
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(421, 66);
             this.numericUpDown3.Maximum = new decimal(new int[] {
-            10000,
+            100000,
             0,
             0,
             0});
@@ -192,9 +192,9 @@ namespace sortownie
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(451, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 15);
+            this.label6.Size = new System.Drawing.Size(95, 15);
             this.label6.TabIndex = 8;
-            this.label6.Text = "Kopcowanie";
+            this.label6.Text = "Przez wstawianie";
             // 
             // Form1
             // 
