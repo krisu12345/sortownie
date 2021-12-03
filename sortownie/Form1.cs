@@ -47,14 +47,21 @@ namespace sortownie
                 }
                 while (n > 1);
             }
-            DateTime pomiar = DateTime.Now;
+            
 
             decimal ilerazy = numericUpDown1.Value;
-            while()
-            sort(Tablica);
-            DateTime po = DateTime.Now;
-            TimeSpan czas = po - pomiar;
-            label1.Text = czas.Milliseconds.ToString();
+            for(int i = 0; i<ilerazy;i++)
+            {
+                DateTime pomiar = DateTime.Now;
+                sort(Tablica);
+                DateTime po = DateTime.Now;
+                TimeSpan czas = po - pomiar;
+               
+            }
+            //DateTime dowyniku = DateTime.Now;
+            //TimeSpan wynik = pomiar
+            
+            //label1.Text = czas.Milliseconds.ToString();
         }
     }
 }
