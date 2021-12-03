@@ -170,5 +170,40 @@ namespace sortownie
                 }
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            if (Tablica.Count == 0)
+            {
+                OpenFileDialog theDialog = new OpenFileDialog();
+                theDialog.Title = "Open Text File";
+                theDialog.Filter = "TXT files|*.txt";
+                theDialog.InitialDirectory = @"C:\";
+                theDialog.ShowDialog();
+
+
+
+                using (var sr = new StreamReader(theDialog.FileName))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Tablica.Add(int.Parse(line));
+                    }
+                }
+            }
+            //ile razy i czas
+            decimal ilerazy = numericUpDown2.Value;
+            DateTime pomiar = DateTime.Now;
+            for (int i = 0; i < ilerazy; i++)
+            {
+                Quick_Sort(Tablica, 0, Tablica.Count - 1);
+            }
+            DateTime po = DateTime.Now;
+            TimeSpan czas = po - pomiar;
+            label5.Text = czas.Seconds.ToString() + "s";
+        }
     }
     }
+//qs przez wstawianie, kopcowanie, scalnie
