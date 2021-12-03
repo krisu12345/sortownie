@@ -59,5 +59,17 @@ namespace sortownie
             label1.Text = czas.Seconds.ToString() + "s";
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog theDialog = new OpenFileDialog();
+            theDialog.Title = "Open Text File";
+            theDialog.Filter = "TXT files|*.txt";
+            theDialog.InitialDirectory = @"C:\";
+            if (theDialog.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(theDialog.FileName.ToString());
+            }
+        }
     }
 }
