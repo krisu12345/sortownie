@@ -38,7 +38,7 @@ namespace sortownie
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(350, 308);
+            this.button1.Location = new System.Drawing.Point(44, 95);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace sortownie
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(367, 153);
+            this.label1.Location = new System.Drawing.Point(63, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace sortownie
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(470, 308);
+            this.numericUpDown1.Location = new System.Drawing.Point(24, 66);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -80,11 +80,11 @@ namespace sortownie
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(273, 153);
+            this.label2.Location = new System.Drawing.Point(24, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 15);
+            this.label2.Size = new System.Drawing.Size(126, 15);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Średni wynik ";
+            this.label2.Text = "Sortowanie bąbelkowe";
             // 
             // Form1
             // 

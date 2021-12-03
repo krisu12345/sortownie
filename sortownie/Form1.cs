@@ -20,18 +20,18 @@ namespace sortownie
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int[] Tablica = new int[10000];
+            List<int> Tablica = new List<int>();
             using (var sr = new StreamReader(@"C:\Users\student\Desktop\ser.txt"))
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                     Tablica.Append(int.Parse(line));
+                     Tablica.Add(int.Parse(line));
                 }
             }
-            static void sort(int[] tablica)
+            static void sort(List<int> tablica)
             {
-                int n = tablica.Length;
+                int n = tablica.Count;
                 do
                 {
                     for (int i = 0; i < n - 1; i++)
@@ -47,7 +47,7 @@ namespace sortownie
                 }
                 while (n > 1);
             }
-            //ile razy i wystwietlanie sredniej
+            //ile razy i czas
             decimal ilerazy = numericUpDown1.Value;
             DateTime pomiar = DateTime.Now;
             for (int i = 0; i<ilerazy;i++)
@@ -56,7 +56,7 @@ namespace sortownie
             }
             DateTime po = DateTime.Now;
             TimeSpan czas = po - pomiar;
-            label1.Text = czas.Milliseconds.ToString();
+            label1.Text = czas.Seconds.ToString() + "s";
 
         }
     }
