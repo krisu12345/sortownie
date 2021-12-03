@@ -62,10 +62,6 @@ namespace sortownie
             wsrednia = srednia/ilerazy;
             label1.Text = wsrednia.ToString();
 
-            //DateTime dowyniku = DateTime.Now;
-            //TimeSpan wynik = pomiar
-            
-            //label1.Text = czas.Milliseconds.ToString();
         }
     }
 }
