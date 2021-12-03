@@ -18,15 +18,38 @@ namespace sortownie
             InitializeComponent();
         }
 
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+        }
+
+
+
+        private List<int> Tablica = new List<int>();
+
         private void button1_Click(object sender, EventArgs e)
         {
-            List<int> Tablica = new List<int>();
-            using (var sr = new StreamReader(@"C:\Users\student\Desktop\ser.txt"))
+            if (Tablica.Count == 0)
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                OpenFileDialog theDialog = new OpenFileDialog();
+                theDialog.Title = "Open Text File";
+                theDialog.Filter = "TXT files|*.txt";
+                theDialog.InitialDirectory = @"C:\";
+                theDialog.ShowDialog();
+
+
+
+
+
+
+
+                using (var sr = new StreamReader(theDialog.FileName))
                 {
-                     Tablica.Add(int.Parse(line));
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Tablica.Add(int.Parse(line));
+                    }
                 }
             }
             static void sort(List<int> tablica)
@@ -47,6 +70,10 @@ namespace sortownie
                 }
                 while (n > 1);
             }
+
+
+
+
             //ile razy i czas
             decimal ilerazy = numericUpDown1.Value;
             DateTime pomiar = DateTime.Now;
@@ -60,16 +87,6 @@ namespace sortownie
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog theDialog = new OpenFileDialog();
-            theDialog.Title = "Open Text File";
-            theDialog.Filter = "TXT files|*.txt";
-            theDialog.InitialDirectory = @"C:\";
-            if (theDialog.ShowDialog() == DialogResult.OK)
-            {
-                MessageBox.Show(theDialog.FileName.ToString());
-            }
-        }
+        
     }
 }
