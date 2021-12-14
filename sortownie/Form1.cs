@@ -73,7 +73,7 @@ namespace sortownie
             //ile razy i czas
             decimal ilerazy = numericUpDown1.Value;
             DateTime pomiar = DateTime.Now;
-            for (int i = 0; i<ilerazy;i++)
+            for (int i = 0; i < ilerazy; i++)
             {
                 sort(Tablica);
             }
@@ -113,7 +113,7 @@ namespace sortownie
             DateTime pomiar = DateTime.Now;
             for (int i = 0; i < ilerazy; i++)
             {
-                Quick_Sort(Tablica,0,Tablica.Count-1);
+                Quick_Sort(Tablica, 0, Tablica.Count - 1);
             }
             DateTime po = DateTime.Now;
             TimeSpan czas = po - pomiar;
@@ -197,7 +197,7 @@ namespace sortownie
             decimal ilerazy = numericUpDown3.Value;
             DateTime pomiar = DateTime.Now;
             for (int ii = 0; ii < ilerazy; ii++)
-            { 
+            {
                 int j;
                 int N = Tablica.Count;
                 int x;
@@ -219,6 +219,41 @@ namespace sortownie
             TimeSpan czas = po - pomiar;
             label5.Text = czas.Seconds.ToString() + "s";
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (Tablica.Count == 0)
+            {
+                OpenFileDialog theDialog = new OpenFileDialog();
+                theDialog.Title = "Open Text File";
+                theDialog.Filter = "TXT files|*.txt";
+                theDialog.InitialDirectory = @"C:\";
+                theDialog.ShowDialog();
+
+
+
+                using (var sr = new StreamReader(theDialog.FileName))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Tablica.Add(int.Parse(line));
+                    }
+                }
+            }
+            //ile razy i czas
+            decimal ilerazy = numericUpDown4.Value;
+            DateTime pomiar = DateTime.Now;
+
+
+
+
+            DateTime po = DateTime.Now;
+            TimeSpan czas = po - pomiar;
+            label7.Text = czas.Seconds.ToString() + "s";
+        }
+
+
     }
-    }
+}
 //qs przez wstawianie, kopcowanie, scalnie
