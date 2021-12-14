@@ -245,7 +245,33 @@ namespace sortownie
             decimal ilerazy = numericUpDown4.Value;
             DateTime pomiar = DateTime.Now;
 
-
+            int pmin = 0;
+            int pmax = - 2;
+            int p;
+            do
+            {
+                p = -1;
+                for (int i = pmin; i <= pmax; i++)
+                    if (Tablica[i] > Tablica[i + 1])
+                    {
+                        int temp = Tablica[i];
+                        Tablica[i] = Tablica[i + 1];
+                        Tablica[i + 1] = temp;
+                        p = i;
+                    }
+                if (p < 0) break;
+                pmax = p - 1;
+                p = -1;
+                for (int i = pmax; i >= pmin; i--)
+                    if (Tablica[i] > Tablica[i + 1])
+                    {
+                        int temp = Tablica[i];
+                        Tablica[i] = Tablica[i + 1];
+                        Tablica[i + 1] = temp;
+                        p = i;
+                    }
+                pmin = p + 1;
+            } while (p >= 0);
 
 
             DateTime po = DateTime.Now;
