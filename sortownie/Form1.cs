@@ -245,8 +245,9 @@ namespace sortownie
             decimal ilerazy = numericUpDown4.Value;
             DateTime pomiar = DateTime.Now;
 
+            int rozmiartab = Tablica.Count;
             int pmin = 0;
-            int pmax = - 2;
+            int pmax = rozmiartab - 2;
             int p;
             do
             {
@@ -276,7 +277,7 @@ namespace sortownie
 
             DateTime po = DateTime.Now;
             TimeSpan czas = po - pomiar;
-            label7.Text = czas.Seconds.ToString() + "s";
+            label7.Text = czas.Milliseconds.ToString() + "s";
         }
 
 
