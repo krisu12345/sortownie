@@ -247,9 +247,9 @@ namespace sortownie
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(629, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 15);
+            this.label8.Size = new System.Drawing.Size(73, 15);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Przez scalanie";
+            this.label8.Text = "Bąbelkowe 2";
             // 
             // Form1
             // 
